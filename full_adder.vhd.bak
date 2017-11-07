@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity full_adder is
+	Port ( A : in STD_LOGIC_VECTOR(31 DOWNTO 0);
+			 B : in STD_LOGIC_VECTOR(31 DOWNTO 0);
+			 Cin : in STD_LOGIC;
+			 S : out STD_LOGIC_VECTOR(31 DOWNTO 0);
+			 Cout : out STD_LOGIC;
+			 OVERFLOW : out STD_LOGIC
+	);
+end full_adder;

@@ -11,9 +11,6 @@ entity ULA is
 		INV_A : in STD_LOGIC;
 		INV_B : in STD_LOGIC;
 		
-		Cin : in STD_LOGIC := '0';
-		Cout : out STD_LOGIC;
-		
 		SEL   : in  STD_LOGIC_VECTOR (1 downto 0);
 
 		-- Output ports
@@ -32,7 +29,6 @@ architecture Behavior of ULA is
 	signal S_OR : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal S_ADDER : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal S_SLT : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal S_OVERFLOW : STD_LOGIC;
 	
 
 begin
@@ -95,24 +91,6 @@ begin
 		  SEL => SEL,
 		  X => S
     );
-	 
-	 -- FULL ADDER
-	 full_adder : work.full_adder
-	 port map (
-		A => S_MUX_A,
-		B => S_MUX_B,
-		Cin => Cin,
-		Cout => Cout,
-		OVERFLOW => S_OVERFLOW,
-		S => S_ADDER
-	 );
-	 
-	 -- SLT
-	 slt : work.slt
-	 port map (
-		OVERFLOW => S_OVERFLOW,
-		A => S_ADDER,
-		S => S_SLT
-	);
+		
 end Behavior;
 
