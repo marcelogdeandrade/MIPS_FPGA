@@ -3,5 +3,5 @@
 ## Fluxo de Dados ULA
 ![alt text](https://github.com/marcelogdeandrade/MIPS_FPGA/blob/master/fluxo_dados_ula.png)
 
-## Fluxo de Dados MIPS
+## Fluxo de Dados MIPS Monociclo
 ![alt text](https://github.com/marcelogdeandrade/MIPS_FPGA/blob/master/fluxo_dados_mips.png)
