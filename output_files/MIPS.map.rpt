@@ -1,5 +1,5 @@
 Analysis & Elaboration report for MIPS
-Tue Nov  7 16:53:33 2017
+Tue Nov  7 17:00:00 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Tue Nov  7 16:53:33 2017       ;
+; Analysis & Elaboration Status      ; Successful - Tue Nov  7 17:00:00 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; MIPS                                        ;
 ; Top-level Entity Name              ; ULA                                         ;
@@ -163,37 +163,37 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Tue Nov  7 16:53:23 2017
+    Info: Processing started: Tue Nov  7 16:59:49 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file ULA.vhd
-    Info (12022): Found design unit 1: ULA-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA.vhd Line: 25
-    Info (12023): Found entity 1: ULA File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file or_port.vhd
-    Info (12022): Found design unit 1: or_port-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/or_port.vhd Line: 11
-    Info (12023): Found entity 1: or_port File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/or_port.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file not_port.vhd
-    Info (12022): Found design unit 1: not_port-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/not_port.vhd Line: 10
-    Info (12023): Found entity 1: not_port File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/not_port.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file mux_4to1.vhd
-    Info (12022): Found design unit 1: mux_4to1-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/mux_4to1.vhd Line: 13
-    Info (12023): Found entity 1: mux_4to1 File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/mux_4to1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file mux_2to1.vhd
-    Info (12022): Found design unit 1: mux_2to1-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/mux_2to1.vhd Line: 11
-    Info (12023): Found entity 1: mux_2to1 File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/mux_2to1.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file full_adder_1bit.vhd
-    Info (12022): Found design unit 1: full_adder_1bit-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/full_adder_1bit.vhd Line: 13
-    Info (12023): Found entity 1: full_adder_1bit File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/full_adder_1bit.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file and_port.vhd
-    Info (12022): Found design unit 1: and_port-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/and_port.vhd Line: 11
-    Info (12023): Found entity 1: and_port File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/and_port.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file full_adder.vhd
-    Info (12022): Found design unit 1: full_adder-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/full_adder.vhd Line: 14
-    Info (12023): Found entity 1: full_adder File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/full_adder.vhd Line: 4
-Info (12021): Found 2 design units, including 1 entities, in source file slt.vhd
-    Info (12022): Found design unit 1: slt-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/slt.vhd Line: 11
-    Info (12023): Found entity 1: slt File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/slt.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/ULA.vhd
+    Info (12022): Found design unit 1: ULA-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 25
+    Info (12023): Found entity 1: ULA File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/slt.vhd
+    Info (12022): Found design unit 1: slt-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/slt.vhd Line: 11
+    Info (12023): Found entity 1: slt File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/slt.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/or_port.vhd
+    Info (12022): Found design unit 1: or_port-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/or_port.vhd Line: 11
+    Info (12023): Found entity 1: or_port File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/or_port.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/not_port.vhd
+    Info (12022): Found design unit 1: not_port-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/not_port.vhd Line: 10
+    Info (12023): Found entity 1: not_port File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/not_port.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/mux_4to1.vhd
+    Info (12022): Found design unit 1: mux_4to1-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/mux_4to1.vhd Line: 13
+    Info (12023): Found entity 1: mux_4to1 File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/mux_4to1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/mux_2to1.vhd
+    Info (12022): Found design unit 1: mux_2to1-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/mux_2to1.vhd Line: 11
+    Info (12023): Found entity 1: mux_2to1 File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/mux_2to1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/full_adder_1bit.vhd
+    Info (12022): Found design unit 1: full_adder_1bit-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder_1bit.vhd Line: 13
+    Info (12023): Found entity 1: full_adder_1bit File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder_1bit.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/full_adder.vhd
+    Info (12022): Found design unit 1: full_adder-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder.vhd Line: 14
+    Info (12023): Found entity 1: full_adder File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/and_port.vhd
+    Info (12022): Found design unit 1: and_port-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/and_port.vhd Line: 11
+    Info (12023): Found entity 1: and_port File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/and_port.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file banco_registradores.vhd
     Info (12022): Found design unit 1: banco_registradores-behavioral File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/banco_registradores.vhd Line: 19
     Info (12023): Found entity 1: banco_registradores File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/banco_registradores.vhd Line: 5
@@ -210,19 +210,19 @@ Info (12021): Found 2 design units, including 1 entities, in source file MIPS.vh
     Info (12022): Found design unit 1: MIPS-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 24
     Info (12023): Found entity 1: MIPS File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 4
 Info (12127): Elaborating entity "ULA" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at ULA.vhd(21): used implicit default value for signal "ZERO" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA.vhd Line: 21
-Info (12128): Elaborating entity "not_port" for hierarchy "not_port:not_a" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA.vhd Line: 41
-Info (12128): Elaborating entity "mux_2to1" for hierarchy "mux_2to1:mux_a" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA.vhd Line: 55
-Info (12128): Elaborating entity "or_port" for hierarchy "or_port:or_port" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA.vhd Line: 73
-Info (12128): Elaborating entity "and_port" for hierarchy "and_port:and_port" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA.vhd Line: 81
-Info (12128): Elaborating entity "mux_4to1" for hierarchy "mux_4to1:mux_sel" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA.vhd Line: 89
-Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:full_adder" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA.vhd Line: 100
-Info (12128): Elaborating entity "full_adder_1bit" for hierarchy "full_adder:full_adder|full_adder_1bit:\FA:0:FA_i" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/full_adder.vhd Line: 21
-Info (12128): Elaborating entity "slt" for hierarchy "slt:slt" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA.vhd Line: 111
+Warning (10541): VHDL Signal Declaration warning at ULA.vhd(21): used implicit default value for signal "ZERO" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 21
+Info (12128): Elaborating entity "not_port" for hierarchy "not_port:not_a" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 41
+Info (12128): Elaborating entity "mux_2to1" for hierarchy "mux_2to1:mux_a" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 55
+Info (12128): Elaborating entity "or_port" for hierarchy "or_port:or_port" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 73
+Info (12128): Elaborating entity "and_port" for hierarchy "and_port:and_port" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 81
+Info (12128): Elaborating entity "mux_4to1" for hierarchy "mux_4to1:mux_sel" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 89
+Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:full_adder" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 100
+Info (12128): Elaborating entity "full_adder_1bit" for hierarchy "full_adder:full_adder|full_adder_1bit:\FA:0:FA_i" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder.vhd Line: 21
+Info (12128): Elaborating entity "slt" for hierarchy "slt:slt" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 111
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1556 megabytes
-    Info: Processing ended: Tue Nov  7 16:53:33 2017
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Peak virtual memory: 1557 megabytes
+    Info: Processing ended: Tue Nov  7 17:00:00 2017
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:25
 
 
