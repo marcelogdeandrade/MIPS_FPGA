@@ -1,5 +1,5 @@
 Analysis & Elaboration report for MIPS
-Tue Nov  7 17:00:00 2017
+Thu Nov 16 11:25:09 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -9,8 +9,12 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: memoria_de_inst:memoria_de_inst
+  5. Analysis & Elaboration Settings
+  6. Port Connectivity Checks: "banco_registradores:banco_registradores"
+  7. Port Connectivity Checks: "memoria_de_inst:memoria_de_inst"
+  8. Port Connectivity Checks: "register32:pc"
+  9. Analysis & Elaboration Messages
 
 
 
@@ -37,10 +41,10 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Tue Nov  7 17:00:00 2017       ;
+; Analysis & Elaboration Status      ; Successful - Thu Nov 16 11:25:09 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; MIPS                                        ;
-; Top-level Entity Name              ; ULA                                         ;
+; Top-level Entity Name              ; MIPS                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Total logic elements               ; N/A until Partition Merge                   ;
 ;     Total combinational functions  ; N/A until Partition Merge                   ;
@@ -70,13 +74,24 @@ agreement for further details.
 +----------------------------+-------------+
 
 
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoria_de_inst:memoria_de_inst ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; data_width     ; 32    ; Signed Integer                                      ;
+; addr_width     ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Settings                                                                                      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; ULA                ; MIPS               ;
+; Top-level entity name                                                      ; MIPS               ; MIPS               ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -157,13 +172,46 @@ agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "banco_registradores:banco_registradores"                                               ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; outreg1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; outreg2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memoria_de_inst:memoria_de_inst"                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; data      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; we        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; re        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q[31..26] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q[10..0]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "register32:pc" ;
++------+-------+----------+-----------------+
+; Port ; Type  ; Severity ; Details         ;
++------+-------+----------+-----------------+
+; ld   ; Input ; Info     ; Stuck at VCC    ;
+; clr  ; Input ; Info     ; Stuck at GND    ;
++------+-------+----------+-----------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Tue Nov  7 16:59:49 2017
+    Info: Processing started: Thu Nov 16 11:24:59 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -201,28 +249,38 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux_2to
     Info (12022): Found design unit 1: mux_2to1_5bits-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/mux_2to1_5bits.vhd Line: 11
     Info (12023): Found entity 1: mux_2to1_5bits File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/mux_2to1_5bits.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoria_de_dados.vhd
-    Info (12022): Found design unit 1: single_port_ram-rtl File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_dados.vhd Line: 27
-    Info (12023): Found entity 1: single_port_ram File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_dados.vhd Line: 7
+    Info (12022): Found design unit 1: memoria_de_dados-rtl File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_dados.vhd Line: 28
+    Info (12023): Found entity 1: memoria_de_dados File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_dados.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file register32.vhd
     Info (12022): Found design unit 1: register32-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/register32.vhd Line: 13
     Info (12023): Found entity 1: register32 File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/register32.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file MIPS.vhd
-    Info (12022): Found design unit 1: MIPS-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 24
+    Info (12022): Found design unit 1: MIPS-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 25
     Info (12023): Found entity 1: MIPS File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 4
-Info (12127): Elaborating entity "ULA" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at ULA.vhd(21): used implicit default value for signal "ZERO" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 21
-Info (12128): Elaborating entity "not_port" for hierarchy "not_port:not_a" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 41
-Info (12128): Elaborating entity "mux_2to1" for hierarchy "mux_2to1:mux_a" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 55
-Info (12128): Elaborating entity "or_port" for hierarchy "or_port:or_port" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 73
-Info (12128): Elaborating entity "and_port" for hierarchy "and_port:and_port" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 81
-Info (12128): Elaborating entity "mux_4to1" for hierarchy "mux_4to1:mux_sel" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 89
-Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:full_adder" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 100
-Info (12128): Elaborating entity "full_adder_1bit" for hierarchy "full_adder:full_adder|full_adder_1bit:\FA:0:FA_i" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder.vhd Line: 21
-Info (12128): Elaborating entity "slt" for hierarchy "slt:slt" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 111
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1557 megabytes
-    Info: Processing ended: Tue Nov  7 17:00:00 2017
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+Info (12021): Found 2 design units, including 1 entities, in source file ula_cu.vhd
+    Info (12022): Found design unit 1: ula_cu-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ula_cu.vhd Line: 20
+    Info (12023): Found entity 1: ula_cu File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ula_cu.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file memoria_de_inst.vhd
+    Info (12022): Found design unit 1: memoria_de_inst-rtl File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 28
+    Info (12023): Found entity 1: memoria_de_inst File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 8
+Info (12127): Elaborating entity "MIPS" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at MIPS.vhd(20): used implicit default value for signal "op_code" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 20
+Warning (10541): VHDL Signal Declaration warning at MIPS.vhd(27): used implicit default value for signal "mux_pc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(31): object "imediato" assigned a value but never read File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 31
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(35): object "imediato2" assigned a value but never read File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 35
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(40): object "dado_reg_1" assigned a value but never read File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 40
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(41): object "dado_reg_2" assigned a value but never read File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 41
+Warning (10541): VHDL Signal Declaration warning at MIPS.vhd(47): used implicit default value for signal "dado_escrit_reg_3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 47
+Info (12128): Elaborating entity "register32" for hierarchy "register32:pc" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 53
+Info (12128): Elaborating entity "memoria_de_inst" for hierarchy "memoria_de_inst:memoria_de_inst" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 61
+Warning (10639): VHDL warning at memoria_de_inst.vhd(32): constant value overflow File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 32
+Warning (10445): VHDL Subtype or Type Declaration warning at memoria_de_inst.vhd(32): subtype or type has null range File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 32
+Info (12128): Elaborating entity "mux_2to1_5bits" for hierarchy "mux_2to1_5bits:mux_addr_reg" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 75
+Info (12128): Elaborating entity "banco_registradores" for hierarchy "banco_registradores:banco_registradores" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 84
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 1555 megabytes
+    Info: Processing ended: Thu Nov 16 11:25:09 2017
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:24
 
 
