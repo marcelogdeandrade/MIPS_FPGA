@@ -136,6 +136,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "ZERO",
+					"strict" : false
+				},
+				{
 					"name" : "INV_A",
 					"strict" : false
 				},

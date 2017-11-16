@@ -1,0 +1,73 @@
+Determining the location of the ModelSim executable...
+
+Using: /home/gil/intelFPGA_lite/17.0/modelsim_ase/linuxaloem/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPS -c MIPS --vector_source="/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/ula.vwf" --testbench_file="/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim/simulation/ula.vwf.vht"
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and its AMPP partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel MegaCore Function License Agreement, or other     Info: applicable license agreement, including, without limitation,     Info: that your use is for the sole purpose of programming logic     Info: devices manufactured by Intel and sold by Intel or its     Info: authorized distributors.  Please refer to the applicable     Info: agreement for further details.    Info: Processing started: Thu Nov 16 17:24:58 2017Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPS -c MIPS --vector_source=/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/ula.vwf --testbench_file=/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim/simulation/ula.vwf.vhtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+utput pin "S[8]" in vector source file when writing test bench files
+Completed successfully. 
+
+**** Generating the timing simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim/" MIPS -c MIPS
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition    Info: Copyright (C) 2017  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and its AMPP partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel MegaCore Function License Agreement, or other     Info: applicable license agreement, including, without limitation,     Info: that your use is for the sole purpose of programming logic     Info: devices manufactured by Intel and sold by Intel or its     Info: authorized distributors.  Please refer to the applicable     Info: agreement for further details.    Info: Processing started: Thu Nov 16 17:24:59 2017Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory=/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim/ MIPS -c MIPSWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file MIPS_7_1200mv_85c_slow.vho in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file MIPS_7_1200mv_0c_slow.vho in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file MIPS_min_1200mv_0c_fast.vho in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file MIPS.vho in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file MIPS_7_1200mv_85c_vhd_slow.sdo in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file MIPS_7_1200mv_0c_vhd_slow.sdo in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file MIPS_min_1200mv_0c_vhd_fast.sdo in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation toolInfo (204019): Generated file MIPS_vhd.sdo in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 1055 megabytes    Info: Processing ended: Thu Nov 16 17:25:00 2017    Info: Elapsed time: 00:00:01    Info: Total CPU time (on all processors): 00:00:01
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim/MIPS.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+/home/gil/intelFPGA_lite/17.0/modelsim_ase/linuxaloem//vsim -c -do MIPS.do
+
+Reading pref.tcl
+# 10.5b
+# do MIPS.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:25:00 on Nov 16,2017# vcom -work work MIPS.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO# -- Loading package std_logic_1164# -- Loading package VITAL_Timing# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack# -- Loading package cycloneive_components
+# -- Compiling entity hard_block# -- Compiling architecture structure of hard_block# -- Compiling entity ULA
+# -- Compiling architecture structure of ULA
+# End time: 17:25:00 on Nov 16,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:25:00 on Nov 16,2017# vcom -work work simulation/ula.vwf.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164# -- Compiling entity ULA_vhd_vec_tst
+# -- Compiling architecture ULA_arch of ULA_vhd_vec_tst
+# End time: 17:25:00 on Nov 16,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -sdfmax ULA_vhd_vec_tst/i1=MIPS_vhd.sdo -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.ULA_vhd_vec_tst # Start time: 17:25:00 on Nov 16,2017# Loading std.standard# Loading std.textio(body)# Loading ieee.std_logic_1164(body)# Loading work.ula_vhd_vec_tst(ula_arch)# SDF 10.5b Compiler 2016.10 Oct  5 2016# Loading ieee.vital_timing(body)# Loading ieee.vital_primitives(body)# Loading cycloneive.cycloneive_atom_pack(body)# Loading cycloneive.cycloneive_components# Loading work.ula(structure)# Loading work.hard_block(structure)# Loading ieee.std_logic_arith(body)# Loading cycloneive.cycloneive_io_obuf(arch)# Loading cycloneive.cycloneive_io_ibuf(arch)# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)# Loading instances from MIPS_vhd.sdo# Loading timing data from MIPS_vhd.sdo# ** Warning: Design size of 23233 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.# Expect performance to be adversely affected.# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.#    Time: 0 ps  Iteration: 0  Instance: /ula_vhd_vec_tst File: simulation/ula.vwf.vht
+# after#33
+# End time: 17:25:01 on Nov 16,2017, Elapsed time: 0:00:01# Errors: 0, Warnings: 1
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/ula.vwf...
+
+Reading /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim/MIPS.msim.vcd...
+
+Processing channel transitions... 
+
+Writing the resulting VWF to /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim/MIPS_20171116172501.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

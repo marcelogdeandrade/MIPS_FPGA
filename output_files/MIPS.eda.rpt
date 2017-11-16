@@ -1,5 +1,5 @@
 EDA Netlist Writer report for MIPS
-Thu Nov 16 16:27:40 2017
+Thu Nov 16 17:25:00 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -8,7 +8,9 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 ---------------------
   1. Legal Notice
   2. EDA Netlist Writer Summary
-  3. EDA Netlist Writer Messages
+  3. Simulation Settings
+  4. Simulation Generated Files
+  5. EDA Netlist Writer Messages
 
 
 
@@ -32,14 +34,53 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------+
-; EDA Netlist Writer Summary                                    ;
-+---------------------------+-----------------------------------+
-; EDA Netlist Writer Status ; Failed - Thu Nov 16 16:27:40 2017 ;
-; Revision Name             ; MIPS                              ;
-; Top-level Entity Name     ; ULA                               ;
-; Family                    ; Cyclone IV E                      ;
-+---------------------------+-----------------------------------+
++-------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                        ;
++---------------------------+---------------------------------------+
+; EDA Netlist Writer Status ; Successful - Thu Nov 16 17:25:00 2017 ;
+; Revision Name             ; MIPS                                  ;
+; Top-level Entity Name     ; ULA                                   ;
+; Family                    ; Cyclone IV E                          ;
+; Simulation Files Creation ; Successful                            ;
++---------------------------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                        ;
++---------------------------------------------------------------------------------------------------+------------------------+
+; Option                                                                                            ; Setting                ;
++---------------------------------------------------------------------------------------------------+------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
+; Generate functional simulation netlist                                                            ; Off                    ;
+; Time scale                                                                                        ; 1 ps                   ;
+; Truncate long hierarchy paths                                                                     ; Off                    ;
+; Map illegal HDL characters                                                                        ; Off                    ;
+; Flatten buses into individual nodes                                                               ; Off                    ;
+; Maintain hierarchy                                                                                ; Off                    ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
+; Enable glitch filtering                                                                           ; Off                    ;
+; Do not write top level VHDL entity                                                                ; Off                    ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
+; Architecture name in VHDL output netlist                                                          ; structure              ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
++---------------------------------------------------------------------------------------------------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                           ;
++------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                      ;
++------------------------------------------------------------------------------------------------------+
+; /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//MIPS_7_1200mv_85c_slow.vho      ;
+; /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//MIPS_7_1200mv_0c_slow.vho       ;
+; /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//MIPS_min_1200mv_0c_fast.vho     ;
+; /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//MIPS.vho                        ;
+; /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//MIPS_7_1200mv_85c_vhd_slow.sdo  ;
+; /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//MIPS_7_1200mv_0c_vhd_slow.sdo   ;
+; /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//MIPS_min_1200mv_0c_vhd_fast.sdo ;
+; /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//MIPS_vhd.sdo                    ;
++------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -62,14 +103,21 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Thu Nov 16 16:27:40 2017
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off MIPS -c MIPS --vector_source=/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/ula_test.vwf --testbench_file=/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim/simulation/ula_test.vwf.vht
+    Info: Processing started: Thu Nov 16 17:24:59 2017
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory=/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim/ MIPS -c MIPS
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Error (199013): HDL output file name "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim/simulation/ula_test.vwf.vht" used with --testbench_file option contains a non-existent directory path
-Error: Quartus Prime EDA Netlist Writer was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 1042 megabytes
-    Error: Processing ended: Thu Nov 16 16:27:40 2017
-    Error: Elapsed time: 00:00:00
-    Error: Total CPU time (on all processors): 00:00:00
+Info (204019): Generated file MIPS_7_1200mv_85c_slow.vho in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file MIPS_7_1200mv_0c_slow.vho in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file MIPS_min_1200mv_0c_fast.vho in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file MIPS.vho in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file MIPS_7_1200mv_85c_vhd_slow.sdo in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file MIPS_7_1200mv_0c_vhd_slow.sdo in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file MIPS_min_1200mv_0c_vhd_fast.sdo in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file MIPS_vhd.sdo in folder "/home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 1055 megabytes
+    Info: Processing ended: Thu Nov 16 17:25:00 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
