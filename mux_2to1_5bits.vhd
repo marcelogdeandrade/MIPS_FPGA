@@ -10,5 +10,5 @@ end mux_2to1_5bits;
 
 architecture Behavior of mux_2to1_5bits is
 begin
-    X <= A when (SEL = '1') else B;
+    X <= A when (SEL = '0') else B;
 end Behavior;
