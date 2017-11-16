@@ -1,6 +1,6 @@
 Analysis & Elaboration report for MIPS
-Thu Nov 16 11:25:09 2017
-Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Thu Nov 16 16:59:11 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -21,18 +21,18 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
-the Altera MegaCore Function License Agreement, or other 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
 applicable license agreement, including, without limitation, 
 that your use is for the sole purpose of programming logic 
-devices manufactured by Altera and sold by Altera or its 
+devices manufactured by Intel and sold by Intel or its 
 authorized distributors.  Please refer to the applicable 
 agreement for further details.
 
@@ -41,8 +41,8 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Thu Nov 16 11:25:09 2017       ;
-; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Analysis & Elaboration Status      ; Successful - Thu Nov 16 16:59:11 2017       ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; MIPS                                        ;
 ; Top-level Entity Name              ; MIPS                                        ;
 ; Family                             ; Cyclone IV E                                ;
@@ -99,7 +99,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
 ; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
 ; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
@@ -168,7 +168,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
 ; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
 ; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-; Synthesis Seed                                                             ; 1                  ; 1                  ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
@@ -210,77 +209,80 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
-    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Thu Nov 16 11:24:59 2017
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Thu Nov 16 16:58:58 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file ULA/ULA.vhd
-    Info (12022): Found design unit 1: ULA-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 25
-    Info (12023): Found entity 1: ULA File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 4
+    Info (12022): Found design unit 1: ULA-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/ULA.vhd Line: 25
+    Info (12023): Found entity 1: ULA File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/ULA.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULA/slt.vhd
-    Info (12022): Found design unit 1: slt-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/slt.vhd Line: 11
-    Info (12023): Found entity 1: slt File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/slt.vhd Line: 4
+    Info (12022): Found design unit 1: slt-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/slt.vhd Line: 11
+    Info (12023): Found entity 1: slt File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/slt.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULA/or_port.vhd
-    Info (12022): Found design unit 1: or_port-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/or_port.vhd Line: 11
-    Info (12023): Found entity 1: or_port File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/or_port.vhd Line: 4
+    Info (12022): Found design unit 1: or_port-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/or_port.vhd Line: 11
+    Info (12023): Found entity 1: or_port File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/or_port.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULA/not_port.vhd
-    Info (12022): Found design unit 1: not_port-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/not_port.vhd Line: 10
-    Info (12023): Found entity 1: not_port File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/not_port.vhd Line: 4
+    Info (12022): Found design unit 1: not_port-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/not_port.vhd Line: 10
+    Info (12023): Found entity 1: not_port File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/not_port.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULA/mux_4to1.vhd
-    Info (12022): Found design unit 1: mux_4to1-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/mux_4to1.vhd Line: 13
-    Info (12023): Found entity 1: mux_4to1 File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/mux_4to1.vhd Line: 4
+    Info (12022): Found design unit 1: mux_4to1-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/mux_4to1.vhd Line: 13
+    Info (12023): Found entity 1: mux_4to1 File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/mux_4to1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULA/mux_2to1.vhd
-    Info (12022): Found design unit 1: mux_2to1-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/mux_2to1.vhd Line: 11
-    Info (12023): Found entity 1: mux_2to1 File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/mux_2to1.vhd Line: 4
+    Info (12022): Found design unit 1: mux_2to1-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/mux_2to1.vhd Line: 11
+    Info (12023): Found entity 1: mux_2to1 File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/mux_2to1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULA/full_adder_1bit.vhd
-    Info (12022): Found design unit 1: full_adder_1bit-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder_1bit.vhd Line: 13
-    Info (12023): Found entity 1: full_adder_1bit File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder_1bit.vhd Line: 4
+    Info (12022): Found design unit 1: full_adder_1bit-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/full_adder_1bit.vhd Line: 13
+    Info (12023): Found entity 1: full_adder_1bit File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/full_adder_1bit.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULA/full_adder.vhd
-    Info (12022): Found design unit 1: full_adder-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder.vhd Line: 14
-    Info (12023): Found entity 1: full_adder File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder.vhd Line: 4
+    Info (12022): Found design unit 1: full_adder-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/full_adder.vhd Line: 14
+    Info (12023): Found entity 1: full_adder File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/full_adder.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ULA/and_port.vhd
-    Info (12022): Found design unit 1: and_port-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/and_port.vhd Line: 11
-    Info (12023): Found entity 1: and_port File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/and_port.vhd Line: 4
+    Info (12022): Found design unit 1: and_port-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/and_port.vhd Line: 11
+    Info (12023): Found entity 1: and_port File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/and_port.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file banco_registradores.vhd
-    Info (12022): Found design unit 1: banco_registradores-behavioral File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/banco_registradores.vhd Line: 19
-    Info (12023): Found entity 1: banco_registradores File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/banco_registradores.vhd Line: 5
+    Info (12022): Found design unit 1: banco_registradores-behavioral File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/banco_registradores.vhd Line: 19
+    Info (12023): Found entity 1: banco_registradores File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/banco_registradores.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file mux_2to1_5bits.vhd
-    Info (12022): Found design unit 1: mux_2to1_5bits-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/mux_2to1_5bits.vhd Line: 11
-    Info (12023): Found entity 1: mux_2to1_5bits File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/mux_2to1_5bits.vhd Line: 4
+    Info (12022): Found design unit 1: mux_2to1_5bits-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/mux_2to1_5bits.vhd Line: 11
+    Info (12023): Found entity 1: mux_2to1_5bits File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/mux_2to1_5bits.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoria_de_dados.vhd
-    Info (12022): Found design unit 1: memoria_de_dados-rtl File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_dados.vhd Line: 28
-    Info (12023): Found entity 1: memoria_de_dados File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_dados.vhd Line: 8
+    Info (12022): Found design unit 1: memoria_de_dados-rtl File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/memoria_de_dados.vhd Line: 28
+    Info (12023): Found entity 1: memoria_de_dados File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/memoria_de_dados.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file register32.vhd
-    Info (12022): Found design unit 1: register32-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/register32.vhd Line: 13
-    Info (12023): Found entity 1: register32 File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/register32.vhd Line: 4
+    Info (12022): Found design unit 1: register32-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/register32.vhd Line: 13
+    Info (12023): Found entity 1: register32 File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/register32.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file MIPS.vhd
-    Info (12022): Found design unit 1: MIPS-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 25
-    Info (12023): Found entity 1: MIPS File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 4
+    Info (12022): Found design unit 1: MIPS-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 25
+    Info (12023): Found entity 1: MIPS File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ula_cu.vhd
-    Info (12022): Found design unit 1: ula_cu-Behavior File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ula_cu.vhd Line: 20
-    Info (12023): Found entity 1: ula_cu File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ula_cu.vhd Line: 4
+    Info (12022): Found design unit 1: ula_cu-Behavior File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ula_cu.vhd Line: 20
+    Info (12023): Found entity 1: ula_cu File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ula_cu.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoria_de_inst.vhd
-    Info (12022): Found design unit 1: memoria_de_inst-rtl File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 28
-    Info (12023): Found entity 1: memoria_de_inst File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 8
+    Info (12022): Found design unit 1: memoria_de_inst-rtl File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/memoria_de_inst.vhd Line: 28
+    Info (12023): Found entity 1: memoria_de_inst File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/memoria_de_inst.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/unary_nor32.vhd
+    Info (12022): Found design unit 1: unary_nor32-Behaviour File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/unary_nor32.vhd Line: 13
+    Info (12023): Found entity 1: unary_nor32 File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/ULA/unary_nor32.vhd Line: 4
 Info (12127): Elaborating entity "MIPS" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at MIPS.vhd(20): used implicit default value for signal "op_code" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 20
-Warning (10541): VHDL Signal Declaration warning at MIPS.vhd(27): used implicit default value for signal "mux_pc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 27
-Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(31): object "imediato" assigned a value but never read File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 31
-Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(35): object "imediato2" assigned a value but never read File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 35
-Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(40): object "dado_reg_1" assigned a value but never read File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 40
-Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(41): object "dado_reg_2" assigned a value but never read File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 41
-Warning (10541): VHDL Signal Declaration warning at MIPS.vhd(47): used implicit default value for signal "dado_escrit_reg_3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 47
-Info (12128): Elaborating entity "register32" for hierarchy "register32:pc" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 53
-Info (12128): Elaborating entity "memoria_de_inst" for hierarchy "memoria_de_inst:memoria_de_inst" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 61
-Warning (10639): VHDL warning at memoria_de_inst.vhd(32): constant value overflow File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 32
-Warning (10445): VHDL Subtype or Type Declaration warning at memoria_de_inst.vhd(32): subtype or type has null range File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 32
-Info (12128): Elaborating entity "mux_2to1_5bits" for hierarchy "mux_2to1_5bits:mux_addr_reg" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 75
-Info (12128): Elaborating entity "banco_registradores" for hierarchy "banco_registradores:banco_registradores" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 84
+Warning (10541): VHDL Signal Declaration warning at MIPS.vhd(20): used implicit default value for signal "op_code" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 20
+Warning (10541): VHDL Signal Declaration warning at MIPS.vhd(27): used implicit default value for signal "mux_pc" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(31): object "imediato" assigned a value but never read File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 31
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(35): object "imediato2" assigned a value but never read File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 35
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(40): object "dado_reg_1" assigned a value but never read File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 40
+Warning (10036): Verilog HDL or VHDL warning at MIPS.vhd(41): object "dado_reg_2" assigned a value but never read File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 41
+Warning (10541): VHDL Signal Declaration warning at MIPS.vhd(47): used implicit default value for signal "dado_escrit_reg_3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 47
+Info (12128): Elaborating entity "register32" for hierarchy "register32:pc" File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 53
+Info (12128): Elaborating entity "memoria_de_inst" for hierarchy "memoria_de_inst:memoria_de_inst" File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 61
+Warning (10639): VHDL warning at memoria_de_inst.vhd(32): constant value overflow File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/memoria_de_inst.vhd Line: 32
+Warning (10445): VHDL Subtype or Type Declaration warning at memoria_de_inst.vhd(32): subtype or type has null range File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/memoria_de_inst.vhd Line: 32
+Info (12128): Elaborating entity "mux_2to1_5bits" for hierarchy "mux_2to1_5bits:mux_addr_reg" File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 76
+Info (12128): Elaborating entity "banco_registradores" for hierarchy "banco_registradores:banco_registradores" File: /home/gil/Documents/Insper/2017.2/DesComp/MIPS_FPGA/MIPS.vhd Line: 85
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 1555 megabytes
-    Info: Processing ended: Thu Nov 16 11:25:09 2017
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Peak virtual memory: 1265 megabytes
+    Info: Processing ended: Thu Nov 16 16:59:11 2017
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:31
 
 
