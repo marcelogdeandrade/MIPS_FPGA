@@ -1,5 +1,5 @@
 Analysis & Elaboration report for MIPS
-Thu Nov 16 16:59:02 2017
+Thu Nov 16 17:03:55 2017
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -9,8 +9,16 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: memoria_de_inst:memoria_de_inst
+  5. Parameter Settings for User Entity Instance: memoria_de_dados:memoria_de_dados
+  6. Analysis & Elaboration Settings
+  7. Port Connectivity Checks: "ULA:ula"
+  8. Port Connectivity Checks: "full_adder:adder_2"
+  9. Port Connectivity Checks: "full_adder:adder_1"
+ 10. Port Connectivity Checks: "mux_2to1:mux_pc"
+ 11. Port Connectivity Checks: "memoria_de_inst:memoria_de_inst"
+ 12. Port Connectivity Checks: "register32:pc"
+ 13. Analysis & Elaboration Messages
 
 
 
@@ -37,7 +45,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Failed - Thu Nov 16 16:59:02 2017           ;
+; Analysis & Elaboration Status      ; Successful - Thu Nov 16 17:03:55 2017       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; MIPS                                        ;
 ; Top-level Entity Name              ; MIPS                                        ;
@@ -68,6 +76,28 @@ agreement for further details.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 +----------------------------+-------------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoria_de_inst:memoria_de_inst ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; data_width     ; 32    ; Signed Integer                                      ;
+; addr_width     ; 32    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoria_de_dados:memoria_de_dados ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; data_width     ; 32    ; Signed Integer                                        ;
+; addr_width     ; 32    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -157,13 +187,79 @@ agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA:ula"                                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "full_adder:adder_2"                                                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; b[1..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cin      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "full_adder:adder_1"                                                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; a[31..3] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; a[1..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; a[2]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; cin      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "mux_2to1:mux_pc" ;
++---------+-------+----------+----------------+
+; Port    ; Type  ; Severity ; Details        ;
++---------+-------+----------+----------------+
+; b[1..0] ; Input ; Info     ; Stuck at GND   ;
++---------+-------+----------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memoria_de_inst:memoria_de_inst"                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; data      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; we        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; re        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q[31..26] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "register32:pc" ;
++------+-------+----------+-----------------+
+; Port ; Type  ; Severity ; Details         ;
++------+-------+----------+-----------------+
+; ld   ; Input ; Info     ; Stuck at VCC    ;
+; clr  ; Input ; Info     ; Stuck at GND    ;
++------+-------+----------+-----------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Thu Nov 16 16:58:50 2017
+    Info: Processing started: Thu Nov 16 17:03:44 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS -c MIPS --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -215,13 +311,35 @@ Info (12021): Found 2 design units, including 1 entities, in source file ula_cu.
 Info (12021): Found 2 design units, including 1 entities, in source file memoria_de_inst.vhd
     Info (12022): Found design unit 1: memoria_de_inst-rtl File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 28
     Info (12023): Found entity 1: memoria_de_inst File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 8
-Error (10476): VHDL error at MIPS.vhd(206): type of identifier "zero_ula" does not agree with its usage as "std_ulogic" type File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 206
-Error (10476): VHDL error at MIPS.vhd(209): type of identifier "mux_pc_beq_jmp" does not agree with its usage as "std_logic_vector" type File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 209
-Error (10558): VHDL error at MIPS.vhd(209): cannot associate formal port "X" of mode "out" with an expression File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 209
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 1555 megabytes
-    Error: Processing ended: Thu Nov 16 16:59:02 2017
-    Error: Elapsed time: 00:00:12
-    Error: Total CPU time (on all processors): 00:00:26
+Info (12021): Found 2 design units, including 1 entities, in source file ULA/unary_nor32.vhd
+    Info (12022): Found design unit 1: unary_nor32-Behaviour File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/unary_nor32.vhd Line: 13
+    Info (12023): Found entity 1: unary_nor32 File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/unary_nor32.vhd Line: 4
+Info (12127): Elaborating entity "MIPS" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at MIPS.vhd(21): used implicit default value for signal "op_code" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 21
+Info (12128): Elaborating entity "register32" for hierarchy "register32:pc" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 60
+Info (12128): Elaborating entity "memoria_de_inst" for hierarchy "memoria_de_inst:memoria_de_inst" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 68
+Warning (10639): VHDL warning at memoria_de_inst.vhd(32): constant value overflow File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 32
+Warning (10445): VHDL Subtype or Type Declaration warning at memoria_de_inst.vhd(32): subtype or type has null range File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_inst.vhd Line: 32
+Info (12128): Elaborating entity "mux_2to1_5bits" for hierarchy "mux_2to1_5bits:mux_addr_reg" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 83
+Info (12128): Elaborating entity "banco_registradores" for hierarchy "banco_registradores:banco_registradores" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 92
+Info (12128): Elaborating entity "mux_2to1" for hierarchy "mux_2to1:mux_pc" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 110
+Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:adder_1" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 122
+Info (12128): Elaborating entity "full_adder_1bit" for hierarchy "full_adder:adder_1|full_adder_1bit:\FA:0:FA_i" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/full_adder.vhd Line: 21
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ula" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 157
+Info (12128): Elaborating entity "not_port" for hierarchy "ULA:ula|not_port:not_a" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 42
+Info (12128): Elaborating entity "or_port" for hierarchy "ULA:ula|or_port:or_port" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 74
+Info (12128): Elaborating entity "and_port" for hierarchy "ULA:ula|and_port:and_port" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 82
+Info (12128): Elaborating entity "mux_4to1" for hierarchy "ULA:ula|mux_4to1:mux_sel" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 90
+Info (12128): Elaborating entity "slt" for hierarchy "ULA:ula|slt:slt" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 112
+Info (12128): Elaborating entity "unary_nor32" for hierarchy "ULA:ula|unary_nor32:flag_zero" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/ULA/ULA.vhd Line: 119
+Info (12128): Elaborating entity "ula_cu" for hierarchy "ula_cu:ula_cu" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 173
+Info (12128): Elaborating entity "memoria_de_dados" for hierarchy "memoria_de_dados:memoria_de_dados" File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/MIPS.vhd Line: 184
+Warning (10639): VHDL warning at memoria_de_dados.vhd(32): constant value overflow File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_dados.vhd Line: 32
+Warning (10445): VHDL Subtype or Type Declaration warning at memoria_de_dados.vhd(32): subtype or type has null range File: /home/marcelo/Documents/Insper/6_Semestre/DesignComputadores/MIPS_FPGA/memoria_de_dados.vhd Line: 32
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 1559 megabytes
+    Info: Processing ended: Thu Nov 16 17:03:55 2017
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:25
 
 

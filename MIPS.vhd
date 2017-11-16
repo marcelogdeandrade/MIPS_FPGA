@@ -45,7 +45,7 @@ architecture Behavior of MIPS is
 	signal s_ula : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal dado_lido_memoria_dados : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal dado_escrit_reg_3 : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal zero_ula : STD_LOGIC_VECTOR(31 DOWNTO 0);
+	signal zero_ula : STD_LOGIC;
 	signal sel_mux_beq: STD_LOGIC;
 	signal s_adder_2 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal s_mux_beq : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -206,7 +206,7 @@ begin
 		SEL => beq AND zero_ula,
 		A => s_adder_1,
 		B => s_adder_2,
-		X => mux_pc_beq_jmp
+		X => s_mux_beq
 	);
 	
 end Behavior;

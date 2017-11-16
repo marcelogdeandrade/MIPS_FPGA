@@ -18,7 +18,7 @@ entity ULA is
 
 		-- Output ports
 		S   : out  STD_LOGIC_VECTOR (31 downto 0);
-		ZERO   : out  STD_LOGIC_VECTOR (31 downto 0)
+		ZERO   : out  STD_LOGIC
 	);
 end ULA;
 
@@ -33,6 +33,7 @@ architecture Behavior of ULA is
 	signal S_ADDER : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal S_SLT : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal S_OVERFLOW : STD_LOGIC;
+	signal S_ZERO : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	
 
 begin
@@ -93,7 +94,7 @@ begin
 		  C => S_ADDER,
 		  D => S_SLT,
 		  SEL => SEL,
-		  X => S
+		  X => S_ZERO
     );
 	 
 	 -- FULL ADDER
@@ -113,6 +114,15 @@ begin
 		OVERFLOW => S_OVERFLOW,
 		A => S_ADDER,
 		S => S_SLT
-	);
+	 );
+	
+	 flag_zero : work.unary_nor32
+	 port map (
+		A => S_ZERO,
+		S => ZERO
+	 );
+
+	 S <= S_ZERO;
+	
 end Behavior;
 
