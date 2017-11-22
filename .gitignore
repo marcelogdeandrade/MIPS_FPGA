@@ -21,7 +21,6 @@ timing
 
 # ignore Quartus II generated files
 *_generation_script*
-*_inst.vhd
 *.bak
 *.cmp
 *.done
