@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 ENTITY register32 IS PORT(
-    d   : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    d   : IN STD_LOGIC_VECTOR(31 DOWNTO 0) := (OTHERS => '0');
     ld  : IN STD_LOGIC := '1'; -- load/enable.
     clr : IN STD_LOGIC := '0'; -- async. clear.
     clk : IN STD_LOGIC; -- clock.

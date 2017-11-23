@@ -29,7 +29,7 @@ architecture rtl of memoria_de_dados is
 
 	-- Build a 2-D array type for the RAM
 	subtype word_t is std_logic_vector((DATA_WIDTH-1) downto 0);
-	type memory_t is array(2**ADDR_WIDTH-1 downto 0) of word_t;
+	type memory_t is array(100 downto 0) of word_t;
 
 	-- Declare the RAM signal.	
 	signal ram : memory_t;
@@ -45,14 +45,11 @@ begin
 		if(we = '1') then
 			ram(to_integer(unsigned(addr))) <= data;
 		end if;
-
-		-- Register the address for reading
-		if (re ='1') then
-			addr_reg <= addr;
-		end if;
 	end if;
 	end process;
-	
+	addr_reg <= addr when re = '1';
 	q <= ram(to_integer(unsigned(addr_reg)));
 
 end rtl;
+
+

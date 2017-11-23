@@ -4,21 +4,20 @@ use IEEE.numeric_std.all;
 
 entity MIPS is
 	port
-	(
-		-- Input ports
-		mux_pc_beq_jmp: in STD_LOGIC;
-		mux_rt_rd: in STD_LOGIC;
-		hab_escrita_reg: in STD_LOGIC;
-		mux_rt_imediato: in STD_LOGIC;
-		ula_op: in STD_LOGIC_VECTOR(1 DOWNTO 0);
-		mux_ula_mem: in STD_LOGIC;
-		beq: in STD_LOGIC;
-		hab_leitura_mem: in STD_LOGIC;
-		hab_escrita_mem: in STD_LOGIC;
+	(	
 		clk : in STD_LOGIC;
 		
-		-- Output ports
-		op_code: out STD_LOGIC_VECTOR(5 DOWNTO 0)
+		-- DEBUG OUTPUTS
+		mem_debug : out STD_LOGIC_VECTOR(31 DOWNTO 0);
+		reg_debug : out STD_LOGIC_VECTOR(31 DOWNTO 0);
+		addr_mem1 : out STD_LOGIC_VECTOR(4 DOWNTO 0);
+		addr_mem2 : out STD_LOGIC_VECTOR(4 DOWNTO 0);
+		addr_mem3 : out STD_LOGIC_VECTOR(4 DOWNTO 0);
+		opcode_out : out STD_LOGIC_VECTOR(5 DOWNTO 0);
+		addr_inst : out STD_LOGIC_VECTOR(31 DOWNTO 0);
+		dado_mem_inst_out : out STD_LOGIC_VECTOR(31 DOWNTO 0);
+		ula_in_a : out STD_LOGIC_VECTOR(31 DOWNTO 0);
+		ula_in_b : out STD_LOGIC_VECTOR(31 DOWNTO 0)
 	);
 end MIPS;
 
@@ -34,7 +33,6 @@ architecture Behavior of MIPS is
 	signal rt : STD_LOGIC_VECTOR(4 DOWNTO 0);
 	signal rd : STD_LOGIC_VECTOR(4 DOWNTO 0);
 	signal imediato2: STD_LOGIC_VECTOR(15 DOWNTO 0);
-	signal opcode : STD_LOGIC_VECTOR(5 DOWNTO 0);
 	signal funct : STD_LOGIC_VECTOR(5 DOWNTO 0);
 	signal imediato2_extendido : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal imediato2_extendido_shift : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -54,6 +52,18 @@ architecture Behavior of MIPS is
 	signal inv_a : STD_LOGIC;
 	signal inv_b : STD_LOGIC;
 	signal ula_ctrl : STD_LOGIC_VECTOR(1 DOWNTO 0);
+	
+	signal mux_pc_beq_jmp: STD_LOGIC;
+	signal mux_rt_rd: STD_LOGIC;
+	signal hab_escrita_reg: STD_LOGIC;
+	signal mux_rt_imediato: STD_LOGIC;
+	signal ula_op: STD_LOGIC_VECTOR(1 DOWNTO 0);
+	signal mux_ula_mem: STD_LOGIC;
+	signal beq: STD_LOGIC;
+	signal hab_leitura_mem: STD_LOGIC;
+	signal hab_escrita_mem: STD_LOGIC;
+	signal op_code: STD_LOGIC_VECTOR(5 DOWNTO 0);
+	
 	
 begin
 	-- PC
@@ -208,5 +218,34 @@ begin
 		B => s_adder_2,
 		X => s_mux_beq
 	);
+	
+	-- FORMAT OP_CODE
+	op_code <= dado_mem_inst(31 DOWNTO 26);
+	
+	-- DECODER
+	decoder : work.decoder
+	port map (
+		opcode => op_code,
+		mux_pc_beq_jmp => mux_pc_beq_jmp,
+		mux_rt_rd => mux_rt_rd,
+		hab_escrita_reg => hab_escrita_reg,
+		mux_rt_imediato => mux_rt_imediato,
+		ula_op => ula_op,
+		mux_ula_mem => mux_ula_mem,
+		beq => beq,
+		hab_leitura_mem => hab_leitura_mem,
+		hab_escrita_mem => hab_escrita_mem
+	);
+	
+	mem_debug <= dado_lido_memoria_dados;
+	reg_debug <= dado_escrit_reg_3;
+	addr_mem1 <= rs;
+	addr_mem2 <= rt;
+	addr_mem3 <= addr_reg_3;
+	opcode_out <= op_code;
+	addr_inst <= pc_mem_inst;
+	dado_mem_inst_out <= dado_mem_inst;
+	ula_in_a <= dado_reg_1;
+	ula_in_b <= entrada_b_ula;
 	
 end Behavior;

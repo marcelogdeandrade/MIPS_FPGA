@@ -18,22 +18,16 @@ end banco_registradores;
 
 architecture behavioral of banco_registradores is
   type registerFile is array(31 DOWNTO 0) of std_logic_vector(31 DOWNTO 0);
-  signal registers : registerFile;
+  signal registers : registerFile := (1 => "00000000000000000000000000000001", 4 => "00000000000000000000000000000011", OTHERS => (OTHERS => '0'));
 begin
   regFile : process (clk) is
   begin
     if rising_edge(clk) then
-      outReg1 <= registers(to_integer(unsigned(AddrReg1)));
-      outReg2 <= registers(to_integer(unsigned(AddrReg2)));
       if writeEnable = '1' then
         registers(to_integer(unsigned(AddrReg3))) <= inputReg3;
-        if AddrReg1 = AddrReg3 then
-          outReg1 <= inputReg3;
-        end if;
-        if AddrReg2 = AddrReg3 then
-          outReg2 <= inputReg3;
-        end if;
       end if;
     end if;
   end process;
+	outReg1 <= registers(to_integer(unsigned(AddrReg1)));
+	outReg2 <= registers(to_integer(unsigned(AddrReg2)));
 end behavioral;
