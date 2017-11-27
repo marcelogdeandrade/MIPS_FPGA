@@ -32,10 +32,13 @@ architecture rtl of memoria_de_inst is
 	type memory_t is array(99 downto 0) of word_t;
 
 	-- Declare the RAM signal.	
-	signal ram : memory_t := (4 => "00000000000000010001000000100000", 
-									  8 => "10101100000000010000000000000000", 
-									  12 => "10001100000001000000000000000000",
-									  16 => "00001000000000000000000000000000",	
+	signal ram : memory_t := (0 => "00000000000000010001000000100000", -- ADD 2, 1, 0
+									  1 => "10101100000000010000000000000000", -- LW 0, 1
+									  2 => "10001100000001000000000000000000", -- SW 0, 2
+									  3 => "00010000001000110000000000001000", -- BEQ 1,3 8 
+									  4 => "00000000000000100001100000101010", -- SLT 0, 1, 3
+									  5 => "00001000000000000000000000001100", -- J 20
+									  6 => "00001000000000000000000000000000",  -- J 4
 									  OTHERS => (OTHERS => '0'));
 
 	-- Register to hold the address 
@@ -52,6 +55,6 @@ begin
 	end if;
 	end process;
 	addr_reg <= addr when re = '1';
-	q <= ram(to_integer(unsigned(addr_reg)));
+	q <= ram(to_integer(unsigned(addr_reg(31 DOWNTO 2))));
 
 end rtl;

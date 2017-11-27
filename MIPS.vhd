@@ -5,24 +5,18 @@ use IEEE.numeric_std.all;
 entity MIPS is
 	port
 	(	
-		clk : in STD_LOGIC;
+		KEY : in STD_LOGIC_VECTOR(3 DOWNTO 0);
+
 		
-		-- DEBUG OUTPUTS
-		mem_debug : out STD_LOGIC_VECTOR(31 DOWNTO 0);
-		reg_debug : out STD_LOGIC_VECTOR(31 DOWNTO 0);
-		addr_mem1 : out STD_LOGIC_VECTOR(4 DOWNTO 0);
-		addr_mem2 : out STD_LOGIC_VECTOR(4 DOWNTO 0);
-		addr_mem3 : out STD_LOGIC_VECTOR(4 DOWNTO 0);
-		opcode_out : out STD_LOGIC_VECTOR(5 DOWNTO 0);
-		addr_inst : out STD_LOGIC_VECTOR(31 DOWNTO 0);
-		dado_mem_inst_out : out STD_LOGIC_VECTOR(31 DOWNTO 0);
-		ula_in_a : out STD_LOGIC_VECTOR(31 DOWNTO 0);
-		ula_in_b : out STD_LOGIC_VECTOR(31 DOWNTO 0)
+		HEX0 : out STD_LOGIC_VECTOR(6 DOWNTO 0)
+		HEX7 : out STD_LOGIC_VECTOR(6 DOWNTO 0)
+
 	);
 end MIPS;
 
 
 architecture Behavior of MIPS is
+
 	signal pc_mem_inst : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal s_mux_pc : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal pc_addr : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -69,7 +63,7 @@ begin
 	-- PC
 	pc : work.register32
    port map (
-        clk => clk, 
+        clk => NOT KEY(0), 
 		  d => s_mux_pc,
 		  q => pc_mem_inst
     );
@@ -77,7 +71,7 @@ begin
 	-- MEM INST
 	memoria_de_inst : work.memoria_de_inst
    port map (
-        clk => clk, 
+        clk => NOT KEY(0), 
 		  addr => pc_mem_inst,
 		  q => dado_mem_inst
     );
@@ -101,7 +95,7 @@ begin
 	 -- BANCO DE REGISTRADORES
 	banco_registradores: work.banco_registradores
    port map (
-        clk => clk, 
+        clk => NOT KEY(0), 
 		  AddrReg1 => rs,
 		  AddrReg2 => rt,
 		  AddrReg3 => addr_reg_3,
@@ -193,7 +187,7 @@ begin
 	-- MEMORIA DE DADOS
 	memoria_de_dados : work.memoria_de_dados
 	port map (
-		clk => clk,
+		clk => NOT KEY(0),
 		addr => s_ula,
 		data => dado_reg_2,
 		we => hab_escrita_mem,
@@ -237,15 +231,19 @@ begin
 		hab_escrita_mem => hab_escrita_mem
 	);
 	
-	mem_debug <= dado_lido_memoria_dados;
-	reg_debug <= dado_escrit_reg_3;
-	addr_mem1 <= rs;
-	addr_mem2 <= rt;
-	addr_mem3 <= addr_reg_3;
-	opcode_out <= op_code;
-	addr_inst <= pc_mem_inst;
-	dado_mem_inst_out <= dado_mem_inst;
-	ula_in_a <= dado_reg_1;
-	ula_in_b <= entrada_b_ula;
+	-----------
+	
+	-- CONVERSOR 7 SEG
+	display : work.conversor7Seg
+	port map (
+      dadoHex => dado_escrit_reg_3(3 DOWNTO 0), apaga => '0', negativo => '0', overFlow => '0', saida7seg => HEX0
+   );
+	
+		-- CONVERSOR 7 SEG
+	displa2 : work.conversor7Seg
+	port map (
+      dadoHex => pc_mem_inst(5 DOWNTO 2), apaga => '0', negativo => '0', overFlow => '0', saida7seg => HEX7
+   );
+
 	
 end Behavior;
