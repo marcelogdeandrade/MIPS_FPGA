@@ -8,7 +8,7 @@ entity MIPS is
 		KEY : in STD_LOGIC_VECTOR(3 DOWNTO 0);
 
 		
-		HEX0 : out STD_LOGIC_VECTOR(6 DOWNTO 0)
+		HEX0 : out STD_LOGIC_VECTOR(6 DOWNTO 0);
 		HEX7 : out STD_LOGIC_VECTOR(6 DOWNTO 0)
 
 	);
@@ -19,7 +19,6 @@ architecture Behavior of MIPS is
 
 	signal pc_mem_inst : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal s_mux_pc : STD_LOGIC_VECTOR(31 DOWNTO 0);
-	signal pc_addr : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal s_adder_1 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal dado_mem_inst : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal imediato : STD_LOGIC_VECTOR(25 DOWNTO 0);
@@ -38,7 +37,6 @@ architecture Behavior of MIPS is
 	signal dado_lido_memoria_dados : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal dado_escrit_reg_3 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal zero_ula : STD_LOGIC;
-	signal sel_mux_beq: STD_LOGIC;
 	signal s_adder_2 : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal s_mux_beq : STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal four : STD_LOGIC_VECTOR(31 DOWNTO 0);
