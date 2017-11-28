@@ -700,29 +700,6 @@ set_global_assignment -name PARTITION_COLOR 16764057 -entity FSMtopLevel -sectio
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity FSMtopLevel -section_id Top
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
-set_global_assignment -name VHDL_FILE ULA/ULA.vhd
-set_global_assignment -name VHDL_FILE ULA/slt.vhd
-set_global_assignment -name VHDL_FILE ULA/or_port.vhd
-set_global_assignment -name VHDL_FILE ULA/not_port.vhd
-set_global_assignment -name VHDL_FILE ULA/mux_4to1.vhd
-set_global_assignment -name VHDL_FILE ULA/mux_2to1.vhd
-set_global_assignment -name VHDL_FILE ULA/full_adder_1bit.vhd
-set_global_assignment -name VHDL_FILE ULA/unary_nor32.vhd
-set_global_assignment -name VHDL_FILE ULA/full_adder.vhd
-set_global_assignment -name VHDL_FILE ULA/and_port.vhd
-set_global_assignment -name VHDL_FILE banco_registradores.vhd
-set_global_assignment -name VHDL_FILE mux_2to1_5bits.vhd
-set_global_assignment -name VHDL_FILE memoria_de_dados.vhd
-set_global_assignment -name VHDL_FILE register32.vhd
-set_global_assignment -name VHDL_FILE MIPS.vhd
-set_global_assignment -name VHDL_FILE ula_cu.vhd
-set_global_assignment -name VHDL_FILE memoria_de_inst.vhd
-set_global_assignment -name VHDL_FILE conversor7Seg.vhd
-set_global_assignment -name VHDL_FILE divisor.vhd
-set_global_assignment -name VHDL_FILE decoder.vhd
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/modelsim/Waveform3.vwf
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_ADCDAT
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_ADCLRCK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_BCLK
@@ -1251,6 +1228,32 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE register141.vhd
+set_global_assignment -name VHDL_FILE register64.vhd
+set_global_assignment -name VHDL_FILE MIPS_Pipeline.vhd
+set_global_assignment -name VHDL_FILE ULA/ULA.vhd
+set_global_assignment -name VHDL_FILE ULA/slt.vhd
+set_global_assignment -name VHDL_FILE ULA/or_port.vhd
+set_global_assignment -name VHDL_FILE ULA/not_port.vhd
+set_global_assignment -name VHDL_FILE ULA/mux_4to1.vhd
+set_global_assignment -name VHDL_FILE ULA/mux_2to1.vhd
+set_global_assignment -name VHDL_FILE ULA/full_adder_1bit.vhd
+set_global_assignment -name VHDL_FILE ULA/unary_nor32.vhd
+set_global_assignment -name VHDL_FILE ULA/full_adder.vhd
+set_global_assignment -name VHDL_FILE ULA/and_port.vhd
+set_global_assignment -name VHDL_FILE banco_registradores.vhd
+set_global_assignment -name VHDL_FILE mux_2to1_5bits.vhd
+set_global_assignment -name VHDL_FILE memoria_de_dados.vhd
+set_global_assignment -name VHDL_FILE register32.vhd
+set_global_assignment -name VHDL_FILE MIPS.vhd
+set_global_assignment -name VHDL_FILE ula_cu.vhd
+set_global_assignment -name VHDL_FILE memoria_de_inst.vhd
+set_global_assignment -name VHDL_FILE conversor7Seg.vhd
+set_global_assignment -name VHDL_FILE divisor.vhd
+set_global_assignment -name VHDL_FILE decoder.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/modelsim/Waveform3.vwf
 set_global_assignment -name VHDL_FILE conversor7seg.vhd
 set_global_assignment -name CDF_FILE output_files/Chain8.cdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE output_files/Waveform.vwf
